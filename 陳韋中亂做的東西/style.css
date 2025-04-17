@@ -1,25 +1,25 @@
-.compare-table {
+/* 表格樣式 */
+.plan-table {
   width: 100%;
-  max-width: 1200px;
-  margin: 40px auto;
   border-collapse: collapse;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  margin: 1.5em 0;
 }
-
-.compare-table th,
-.compare-table td {
-  border: 1px solid #ccc;
-  padding: 14px;
+.plan-table th,
+.plan-table td {
+  border: 1px solid #d8cab0;
+  padding: 0.8em;
   vertical-align: top;
 }
-
-.compare-table th {
-  background-color: #eaf4ff;
+.plan-table th {
+  background-color: #f7f2e9;
   text-align: center;
-  font-weight: bold;
 }
-
+.plan-table tbody tr:nth-child(even) {
+  background-color: #fbf8f0;
+}
+.plan-table ol, .plan-table ul {
+  margin: 0.2em 0 0.2em 1.2em;
+}
 .arrow-cell {
   text-align: center;
   font-size: 1.6rem;
