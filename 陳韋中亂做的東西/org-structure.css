@@ -1,0 +1,66 @@
+.org-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.org-node {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #f0e6d6;
+  border-radius: 10px;
+  width: fit-content;
+  text-align: center;
+  font-weight: bold;
+}
+
+.org-line {
+  width: 2px;
+  height: 20px;
+  background-color: #999;
+  margin: 0.5rem 0;
+}
+
+.org-connector {
+  width: 80%;
+  height: 2px;
+  background-color: #999;
+  margin: 0.5rem 0;
+}
+
+.org-branch-advanced {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.org-node-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.org-line-straight {
+  width: 2px;
+  height: 20px;
+  background-color: #999;
+}
+
+.org-line-turn {
+  width: 20px;
+  height: 20px;
+  border: solid #999;
+  border-width: 0 2px 2px 0;
+  margin-bottom: 4px;
+}
+
+.left-turn {
+  transform: rotate(225deg);
+}
+
+.right-turn {
+  transform: rotate(45deg);
+}
