@@ -1,3 +1,33 @@
+.compare-table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.compare-table th,
+.compare-table td {
+  border: 1px solid #ccc;
+  padding: 14px;
+  vertical-align: top;
+}
+
+.compare-table th {
+  background-color: #eaf4ff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.arrow-cell {
+  text-align: center;
+  font-size: 1.6rem;
+  background-color: #f9f9f9;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
 .goal-compare {
   width: 100%;
   max-width: 1200px;
