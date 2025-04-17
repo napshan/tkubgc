@@ -1,29 +1,36 @@
-.goal-table {
+.goal-compare {
   width: 100%;
-  max-width: 1000px;
-  margin: 30px auto;
+  max-width: 1200px;
+  margin: 40px auto;
   border-collapse: collapse;
   text-align: left;
 }
 
-.goal-table th, .goal-table td {
+.goal-compare th, .goal-compare td {
   border: 1px solid #ccc;
   padding: 12px;
+  vertical-align: top;
 }
 
-.goal-table th {
-  background-color: #f0f8ff;
-  color: #333;
-}
-
-.goal-table tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
-.goal-table td:first-child {
+.goal-compare th {
+  background-color: #e9f5ff;
   font-weight: bold;
-  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.goal-compare td:nth-child(1),
+.goal-compare td:nth-child(2),
+.goal-compare td:nth-child(5) {
   width: 20%;
+}
+
+.goal-compare td:nth-child(4) {
+  width: 5%;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: #f9f9f9;
+  color: #4CAF50;
+  font-weight: bold;
 }
 
 .arrow {
