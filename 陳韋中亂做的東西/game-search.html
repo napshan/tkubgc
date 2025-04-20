@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <title>搜尋社團桌遊 | 淡江大學桌遊研習社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css"><!-- 全域 CSS -->
+  <!-- 全域樣式 -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 本頁面搜尋區塊與卡片樣式 -->
   <style>
     .search-section {
       max-width: 600px;
@@ -78,7 +80,7 @@
       <h2>🔍 搜尋社團桌遊</h2>
       <input type="text" id="searchInput" placeholder="輸入桌遊名稱／類型／人數">
       <button id="searchBtn">搜尋</button>
-      <div id="searchResult" style="margin-top:1rem;"></div>
+      <div id="searchResult"></div>
     </section>
   </main>
 
@@ -103,48 +105,56 @@
   </footer>
 
   <script>
-    // 請改成你最新部署後的 URL
-    const apiBase = 'https://script.google.com/macros/s/AKfycbzt34B86tOAWs70_iFRXoG51-VEdOdu154-j9kjZSdwLtz_dbWemRkPsa0SVEyoYlZlbw/exec';
+    // 替換成你最新部署後的 Apps Script Web App URL
+    const apiBase = 'https://script.google.com/macros/s/你的ID/exec';
 
     document.getElementById('searchBtn').addEventListener('click', searchGame);
 
     function searchGame() {
       const input = document.getElementById('searchInput').value.trim();
       const resultDiv = document.getElementById('searchResult');
+
+      // 清空前一次結果
+      resultDiv.innerHTML = '';
+      // 如果有舊的 JSONP <script>，移除
+      if (window._jsonpScript) {
+        document.body.removeChild(window._jsonpScript);
+        window._jsonpScript = null;
+      }
+
       if (!input) {
         resultDiv.innerHTML = "請輸入關鍵字進行搜尋。";
         return;
       }
+
+      // 顯示 loading
       resultDiv.innerHTML = "搜尋中…";
 
-      // 刪除舊的 JSONP 腳本
-      if (window._jsonpScript) {
-        document.body.removeChild(window._jsonpScript);
-      }
       // 動態 callback 名稱
       const cbName = '_jsonp_cb_' + Date.now();
       window[cbName] = function(data) {
-        // 處理回傳結果
+        // 渲染結果
         if (data && data.length) {
           resultDiv.innerHTML = data.map(game => `
             <div class="game-card">
               <strong>${game.name}</strong>
-              <p>🕒 <b>時長：</b>${game.duration}</p>
-              <p>🎲 <b>類型：</b>${game.type}</p>
-              <p>👥 <b>人數：</b>${game.players}</p>
-              <p>👍 <b>推薦人數：</b>${game.recommended}</p>
-              <p>⭐ <b>難度：</b>${game.difficulty}</p>
+              <p>🕒 <b>時長：</b> ${game.duration}</p>
+              <p>🎲 <b>類型：</b> ${game.type}</p>
+              <p>👥 <b>人數：</b> ${game.players}</p>
+              <p>👍 <b>推薦人數：</b> ${game.recommended}</p>
+              <p>⭐ <b>難度：</b> ${game.difficulty}</p>
             </div>
           `).join('');
         } else {
           resultDiv.innerHTML = "找不到符合的桌遊。";
         }
-        // 清理
+        // 清理 callback 和 <script>
         delete window[cbName];
         document.body.removeChild(window._jsonpScript);
+        window._jsonpScript = null;
       };
 
-      // 建立並插入 JSONP <script>
+      // 插入 JSONP <script>
       const script = document.createElement('script');
       script.src = `${apiBase}?q=${encodeURIComponent(input)}&callback=${cbName}`;
       window._jsonpScript = script;
