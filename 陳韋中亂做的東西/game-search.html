@@ -77,40 +77,42 @@
 
 <script>
   async function searchGame() {
-    const input = document.getElementById('searchInput').value.trim();
-    const resultDiv = document.getElementById('searchResult');
-    if (!input) {
-      resultDiv.innerHTML = "請輸入關鍵字進行搜尋。";
-      return;
-    }
-
-    resultDiv.innerHTML = "搜尋中...";
-
-    const apiUrl = `https://script.google.com/macros/s/AKfycbxeAHz7Iwa6nskBk2eba3tE0VPsCuUBLAWo7CnrwygADFrcrHh6W4O7Otyi4nU_P8Qs7A/exec`;
-
-    try {
-      const response = await fetch(apiUrl);
-      const results = await response.json();
-
-      if (results.length > 0) {
-        resultDiv.innerHTML = results.map(game => `
-          <div class="game-card">
-            <strong>${game.name}</strong>
-            <p>🕒 <b>時長：</b>${game.duration}</p>
-            <p>🎲 <b>類型：</b>${game.type}</p>
-            <p>👥 <b>人數：</b>${game.players}</p>
-            <p>👍 <b>推薦人數：</b>${game.recommended}</p>
-            <p>⭐ <b>難度：</b>${game.difficulty}</p>
-          </div>
-        `).join('');
-      } else {
-        resultDiv.innerHTML = "找不到符合的桌遊。";
-      }
-    } catch (error) {
-      resultDiv.innerHTML = "搜尋失敗，請稍後再試。";
-      console.error("Fetch Error:", error);
-    }
+  const input = document.getElementById('searchInput').value.trim();
+  const resultDiv = document.getElementById('searchResult');
+  if (!input) {
+    resultDiv.innerHTML = "請輸入關鍵字進行搜尋。";
+    return;
   }
+
+  resultDiv.innerHTML = "搜尋中…";
+
+  // 在 URL 後面加 ?q= 關鍵字
+  const apiUrl = `https://script.google.com/macros/.../exec?q=${encodeURIComponent(input)}`;
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const results = await response.json();
+
+    if (results.length) {
+      resultDiv.innerHTML = results.map(game => `
+        <div class="game-card">
+          <strong>${game.name}</strong>
+          <p>🕒 <b>時長：</b>${game.duration}</p>
+          <p>🎲 <b>類型：</b>${game.type}</p>
+          <p>👥 <b>人數：</b>${game.players}</p>
+          <p>👍 <b>推薦人數：</b>${game.recommended}</p>
+          <p>⭐ <b>難度：</b>${game.difficulty}</p>
+        </div>
+      `).join('');
+    } else {
+      resultDiv.innerHTML = "找不到符合的桌遊。";
+    }
+  } catch (err) {
+    console.error("Fetch Error:", err);
+    resultDiv.innerHTML = "搜尋失敗，請稍後再試。";
+  }
+}
+
 </script>
 
 
