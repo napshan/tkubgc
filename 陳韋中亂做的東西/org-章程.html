@@ -9,13 +9,14 @@
     /* 容納短中長期計畫與箭頭 */
     #plans-container {
       position: relative;
+      padding-bottom: 50px;
     }
     #arrow-svg {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 2000px;
+      height: 100%;
       pointer-events: none;
     }
     marker#arrowhead polygon {
@@ -226,7 +227,7 @@
   第九條 本辦法經社員大會通過後實施，修正亦同。
 
       </pre>
-    </section>
+    <section id="plan">
        <section id="plan">
       <h2>112年短程／中程／長程計畫</h2>
       <table class="plan-table">
@@ -240,25 +241,25 @@
         </thead>
         <tbody>
           <tr>
-            <th>計畫目標</th>
-            <td>
-              <ol>
-                <li>尋找幹部</li>
-                <li>凝聚社團向心力</li>
-                <li>讓社員能在社團學習到東西</li>
-              </ol>
-            </td>
-            <td>
-              <ol>
-                <li>購入適合在桌遊社中使用的各式桌遊</li>
-                <li>培養設計桌遊的人才</li>
-                <li>建立與他校桌遊社的交流</li>
-              </ol>
-            </td>
-            <td>
-              <ol>
-                <li>塑造大量桌遊教學人才</li>
-              </ol>
+              <th>計畫目標</th>
+              <td id="plan112-short">
+                <ol>
+                  <li>尋找幹部</li>
+                  <li>凝聚社團向心力</li>
+                  <li>讓社員能在社團學習到東西</li>
+                </ol>
+              </td>
+              <td id="plan112-mid">
+                <ol>
+                  <li>購入適合在桌遊社中使用的各式桌遊</li>
+                  <li>培養設計桌遊的人才</li>
+                  <li>建立與他校桌遊社的交流</li>
+                </ol>
+              </td>
+              <td id="plan112-long">
+                <ol>
+                  <li>塑造大量桌遊教學人才</li>
+                </ol>
             </td>
           </tr>
           <tr>
@@ -300,9 +301,7 @@
         </tbody>
       </table>
     </section>
-    <section id="plan-new">
-  <!-- 新版 短程／中程／長程計畫 -->
-<section id="plan-new">
+      <section id="plan-new">
       <h2>113年新版 短程／中程／長程計畫</h2>
       <table class="plan-table">
         <thead>
@@ -315,28 +314,27 @@
         </thead>
         <tbody>
           <tr>
-            <th>目標</th>
-            <td>
-              <ol>
-                <li>各項活動達到預期指標（滿意度 5.2 以上），且新進社員留社率達 70%</li>
-                <li>尋找幹部</li>
-              </ol>
-            </td>
-            <td>
-              <ol>
-                <li>嘗試舉辦不同於以往的活動</li>
-                <li>活動滿意度皆達 5.2 以上</li>
-                <li>購入適合在桌遊社中使用的各式桌遊</li>
-              </ol>
-            </td>
-            <td>
-              <ol>
-                <li>主辦全國性桌遊比賽</li>
-                <li>建立一個桌遊平台，供喜愛桌遊的玩家可以找到一起玩的人</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
+              <th>目標</th>
+              <td id="plan113-short">
+                <ol>
+                  <li>各項活動達到預期指標（滿意度 5.2 以上），且新進社員留社率達 70%</li>
+                  <li>尋找幹部</li>
+                </ol>
+              </td>
+              <td id="plan113-mid">
+                <ol>
+                  <li>嘗試舉辦不同於以往的活動</li>
+                  <li>活動滿意度皆達 5.2 以上</li>
+                  <li>購入適合在桌遊社中使用的各式桌遊</li>
+                </ol>
+              </td>
+              <td>
+                <ol>
+                  <li>主辦全國性桌遊比賽</li>
+                  <li>建立桌遊平台，供喜愛桌遊的玩家一起玩</li>
+                </ol>
+              </td>
+            </tr>
             <th>實施策略</th>
             <td>
               <ol>
@@ -414,7 +412,7 @@
         </tbody>
       </table>
     </section>
-          <!-- SVG 箭頭覆蓋層 -->
+      <!-- SVG 箭頭覆蓋層 -->
       <svg id="arrow-svg" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
@@ -425,33 +423,33 @@
 
     </div>
   </main>
-   <!-- 腳本：動態計算並繪製箭頭 -->
+ <!-- 動態繪製箭頭 -->
   <script>
-    window.onload = function() {
+    window.addEventListener('load', function() {
       function drawArrow(fromId, toId) {
         var from = document.getElementById(fromId);
         var to = document.getElementById(toId);
         if (!from || !to) return;
-        var rect1 = from.getBoundingClientRect();
-        var rect2 = to.getBoundingClientRect();
+        var r1 = from.getBoundingClientRect();
+        var r2 = to.getBoundingClientRect();
         var svg = document.getElementById('arrow-svg');
-        var x1 = rect1.left + rect1.width / 2 + window.scrollX;
-        var y1 = rect1.bottom + window.scrollY;
-        var x2 = rect2.left + rect2.width / 2 + window.scrollX;
-        var y2 = rect2.top + window.scrollY;
-        var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        var x1 = r1.left + r1.width/2 + window.pageXOffset;
+        var y1 = r1.bottom + window.pageYOffset;
+        var x2 = r2.left + r2.width/2 + window.pageXOffset;
+        var y2 = r2.top + window.pageYOffset;
+        var line = document.createElementNS('http://www.w3.org/2000/svg','line');
         line.setAttribute('x1', x1);
         line.setAttribute('y1', y1);
         line.setAttribute('x2', x2);
         line.setAttribute('y2', y2);
-        line.setAttribute('stroke', '#0078d7');
-        line.setAttribute('stroke-width', '2');
-        line.setAttribute('marker-end', 'url(#arrowhead)');
+        line.setAttribute('stroke','#0078d7');
+        line.setAttribute('stroke-width','2');
+        line.setAttribute('marker-end','url(#arrowhead)');
         svg.appendChild(line);
       }
-      drawArrow('plan112-mid', 'plan113-short');
-      drawArrow('plan112-long', 'plan113-mid');
-    };
+      drawArrow('plan112-mid','plan113-short');
+      drawArrow('plan112-long','plan113-mid');
+    });
   </script>
   <!-- 頁尾 -->
   <footer>
@@ -474,4 +472,4 @@
   </footer>
 
 </body>
-</html>幫我在112短中期目標下畫箭頭到113短期目標上面，112長期目標畫到113中期目標上
+</html>
