@@ -5,28 +5,32 @@
   <title>組織章程 | 淡江大學桌遊研習社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* 容納短中長期計畫與箭頭 */
-    #plans-container {
-      position: relative;  /* 調整: 設定容器相對定位，方便SVG絕對定位 */
-    }
-    #arrow-svg {
-      position: absolute;  /* 調整: SVG絕對定位於容器內 */
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 2;       /* 調整: 提升層級，避免被表格覆蓋 */
-      pointer-events: none;
-    }
-    marker#arrowhead polygon {
-      fill: #0078d7;     /* 調整: 設定箭頭顏色 */
-    }
-    .plan-table th, .plan-table td {
-      vertical-align: top;
-      position: relative; /* 調整: 設定較低層級，避免遮蔽SVG */
-      z-index: 1;
-    }
-  </style>
+<style>
+  #plans-container { 
+    position: relative; 
+    overflow: visible; 
+  }
+
+  #arrow-svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%; 
+    /* 不一定要 height:100%，有 bottom:0 就會自動拉滿 */
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  marker#arrowhead polygon {
+    fill: #0078d7;
+  }
+
+  .plan-table th,
+  .plan-table td {
+    position: relative;
+    z-index: 1;
+  }
+</style>
 </head>
 <body>
 
