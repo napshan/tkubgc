@@ -4,26 +4,105 @@
   <meta charset="UTF-8">
   <title>搜尋社團桌遊 | 淡江大學桌遊研習社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 你的全域 CSS -->
   <link rel="stylesheet" href="style.css">
+  <!-- 本頁面搜尋區塊與卡片樣式 -->
   <style>
-    /* 簡單示意美化，可依需求修改 */
-    .search-section { max-width: 600px; margin: 2rem auto; }
-    .game-card { border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem; border-radius: 4px; background: #fafafa; }
+    .search-section {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .search-section input {
+      width: calc(100% - 110px);
+      padding: 0.5rem;
+      margin-right: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .search-section button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      background: #0078d7;
+      color: #fff;
+      cursor: pointer;
+    }
+    .game-card {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-top: 1rem;
+      background: #f9f9f9;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
-  <!-- 導覽列略 -->
 
+  <!-- 導覽列 -->
+  <header>
+    <div class="title"><a href="社團.html">淡江大學桌遊研習社</a></div>
+    <nav>
+      <ul class="dropdown-menu">
+        <li class="dropdown">
+          <a href="#">組織運作</a>
+          <ul class="dropdown-content">
+            <li><a href="org-章程.html">組織章程</a></li>
+            <li><a href="org-會議紀錄.html">會議紀錄</a></li>
+            <li><a href="org-會議通知.html">會議通知</a></li>
+            <li><a href="org-行事曆.html">學期行事曆</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">社團活動經營</a>
+          <ul class="dropdown-content">
+            <li><a href="event-上學期.html">上學期</a></li>
+            <li><a href="event-下學期.html">下學期</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">財務管理</a>
+          <ul class="dropdown-content">
+            <li><a href="finance.html">財務資料</a></li>
+            <li><a href="game-search.html">桌遊搜尋</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 主內容 -->
   <main>
     <section class="search-section">
       <h2>🔍 搜尋社團桌遊</h2>
       <input type="text" id="searchInput" placeholder="輸入桌遊名稱／類型／人數">
       <button id="searchBtn">搜尋</button>
-      <div id="searchResult" style="margin-top:1rem;"></div>
+      <div id="searchResult"></div>
     </section>
   </main>
 
-  <!-- 頁尾略 -->
+  <!-- 頁尾 -->
+  <footer>
+    <div>
+      <h4>聯絡資料</h4>
+      <p>淡江大學桌遊研習社</p>
+      <p>社團辦公室：SG104</p>
+      <p>借用器材請私訊社帳</p>
+    </div>
+    <div>
+      <h4>公關長</h4>
+      <p>姓名：陳韋中</p>
+      <p>Email：chenwj.taipei@gmail.com</p>
+    </div>
+    <div>
+      <h4>相關連結</h4>
+      <p><a href="https://www.instagram.com/tku_bgc/">IG</a></p>
+      <p><a href="https://www.facebook.com/TkuBGC/?locale=zh_TW">FB</a></p>
+    </div>
+  </footer>
 
   <script>
     document.getElementById('searchBtn').addEventListener('click', searchGame);
@@ -35,15 +114,14 @@
         resultDiv.innerHTML = "請輸入關鍵字進行搜尋。";
         return;
       }
-
       resultDiv.innerHTML = "搜尋中…";
 
-      // 將 q 參數帶到後端
-      const apiUrl = 'https://script.google.com/macros/s/AKfycbxeAHz7Iwa6nskBk2eba3tE0VPsCuUBLAWo7CnrwygADFrcrHh6W4O7Otyi4nU_P8Qs7A/exec';
-      const urlWithParam = `${apiUrl}?q=${encodeURIComponent(input)}`;
+      // 使用你提供的最新 Apps Script Web App URL
+      const apiBase = 'https://script.google.com/macros/s/AKfycbyoshCf7RHogQj85VK1uPJS8NBuXF3sVrSydGopLI1-VFyTmh4kwp5P2lklnqkIunhNog/exec';
+      const url = `${apiBase}?q=${encodeURIComponent(input)}`;
 
       try {
-        const response = await fetch(urlWithParam);
+        const response = await fetch(url);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const results = await response.json();
 
@@ -51,11 +129,11 @@
           resultDiv.innerHTML = results.map(game => `
             <div class="game-card">
               <strong>${game.name}</strong>
-              <p>🕒 <b>時長：</b>${game.duration}</p>
-              <p>🎲 <b>類型：</b>${game.type}</p>
-              <p>👥 <b>人數：</b>${game.players}</p>
-              <p>👍 <b>推薦人數：</b>${game.recommended}</p>
-              <p>⭐ <b>難度：</b>${game.difficulty}</p>
+              <p>🕒 <b>時長：</b> ${game.duration}</p>
+              <p>🎲 <b>類型：</b> ${game.type}</p>
+              <p>👥 <b>人數：</b> ${game.players}</p>
+              <p>👍 <b>推薦人數：</b> ${game.recommended}</p>
+              <p>⭐ <b>難度：</b> ${game.difficulty}</p>
             </div>
           `).join('');
         } else {
