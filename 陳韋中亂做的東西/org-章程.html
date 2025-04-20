@@ -5,6 +5,26 @@
   <title>組織章程 | 淡江大學桌遊研習社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* 容納短中長期計畫與箭頭 */
+    #plans-container {
+      position: relative;
+    }
+    #arrow-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2000px;
+      pointer-events: none;
+    }
+    marker#arrowhead polygon {
+      fill: #0078d7;
+    }
+    .plan-table th, .plan-table td {
+      vertical-align: top;
+    }
+  </style>
 </head>
 <body>
 
@@ -394,8 +414,45 @@
         </tbody>
       </table>
     </section>
-  </main>
+          <!-- SVG 箭頭覆蓋層 -->
+      <svg id="arrow-svg" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0,10 3.5,0 7" />
+          </marker>
+        </defs>
+      </svg>
 
+    </div>
+  </main>
+   <!-- 腳本：動態計算並繪製箭頭 -->
+  <script>
+    window.onload = function() {
+      function drawArrow(fromId, toId) {
+        var from = document.getElementById(fromId);
+        var to = document.getElementById(toId);
+        if (!from || !to) return;
+        var rect1 = from.getBoundingClientRect();
+        var rect2 = to.getBoundingClientRect();
+        var svg = document.getElementById('arrow-svg');
+        var x1 = rect1.left + rect1.width / 2 + window.scrollX;
+        var y1 = rect1.bottom + window.scrollY;
+        var x2 = rect2.left + rect2.width / 2 + window.scrollX;
+        var y2 = rect2.top + window.scrollY;
+        var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', x1);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
+        line.setAttribute('stroke', '#0078d7');
+        line.setAttribute('stroke-width', '2');
+        line.setAttribute('marker-end', 'url(#arrowhead)');
+        svg.appendChild(line);
+      }
+      drawArrow('plan112-mid', 'plan113-short');
+      drawArrow('plan112-long', 'plan113-mid');
+    };
+  </script>
   <!-- 頁尾 -->
   <footer>
     <div>
