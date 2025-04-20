@@ -4,27 +4,25 @@
   <meta charset="UTF-8">
   <title>搜尋社團桌遊 | 淡江大學桌遊研習社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 你的全域 CSS -->
-  <link rel="stylesheet" href="style.css">
-  <!-- 本頁面搜尋區塊與卡片樣式 -->
+  <link rel="stylesheet" href="style.css"><!-- 全域 CSS -->
   <style>
     .search-section {
       max-width: 600px;
       margin: 2rem auto;
-      padding: 1rem;
+      padding: 1.5rem;
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .search-section input {
-      width: calc(100% - 110px);
+      width: calc(100% - 100px);
       padding: 0.5rem;
-      margin-right: 0.5rem;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
     .search-section button {
       padding: 0.5rem 1rem;
+      margin-left: 0.5rem;
       border: none;
       border-radius: 4px;
       background: #0078d7;
@@ -32,11 +30,11 @@
       cursor: pointer;
     }
     .game-card {
-      border: 1px solid #ccc;
+      border: 1px solid #ddd;
       padding: 1rem;
       margin-top: 1rem;
-      background: #f9f9f9;
       border-radius: 4px;
+      background: #f9f9f9;
     }
   </style>
 </head>
@@ -80,7 +78,7 @@
       <h2>🔍 搜尋社團桌遊</h2>
       <input type="text" id="searchInput" placeholder="輸入桌遊名稱／類型／人數">
       <button id="searchBtn">搜尋</button>
-      <div id="searchResult"></div>
+      <div id="searchResult" style="margin-top:1rem;"></div>
     </section>
   </main>
 
@@ -105,9 +103,12 @@
   </footer>
 
   <script>
+    // 請改成你最新部署後的 URL
+    const apiBase = 'https://script.google.com/macros/s/AKfycbyoshCf7RHogQj85VK1uPJS8NBuXF3sVrSydGopLI1-VFyTmh4kwp5P2lklnqkIunhNog/exec';
+
     document.getElementById('searchBtn').addEventListener('click', searchGame);
 
-    async function searchGame() {
+    function searchGame() {
       const input = document.getElementById('searchInput').value.trim();
       const resultDiv = document.getElementById('searchResult');
       if (!input) {
@@ -116,33 +117,38 @@
       }
       resultDiv.innerHTML = "搜尋中…";
 
-      // 使用你提供的最新 Apps Script Web App URL
-      const apiBase = 'https://script.google.com/macros/s/AKfycbyoshCf7RHogQj85VK1uPJS8NBuXF3sVrSydGopLI1-VFyTmh4kwp5P2lklnqkIunhNog/exec';
-      const url = `${apiBase}?q=${encodeURIComponent(input)}`;
-
-      try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const results = await response.json();
-
-        if (results.length) {
-          resultDiv.innerHTML = results.map(game => `
+      // 刪除舊的 JSONP 腳本
+      if (window._jsonpScript) {
+        document.body.removeChild(window._jsonpScript);
+      }
+      // 動態 callback 名稱
+      const cbName = '_jsonp_cb_' + Date.now();
+      window[cbName] = function(data) {
+        // 處理回傳結果
+        if (data && data.length) {
+          resultDiv.innerHTML = data.map(game => `
             <div class="game-card">
               <strong>${game.name}</strong>
-              <p>🕒 <b>時長：</b> ${game.duration}</p>
-              <p>🎲 <b>類型：</b> ${game.type}</p>
-              <p>👥 <b>人數：</b> ${game.players}</p>
-              <p>👍 <b>推薦人數：</b> ${game.recommended}</p>
-              <p>⭐ <b>難度：</b> ${game.difficulty}</p>
+              <p>🕒 <b>時長：</b>${game.duration}</p>
+              <p>🎲 <b>類型：</b>${game.type}</p>
+              <p>👥 <b>人數：</b>${game.players}</p>
+              <p>👍 <b>推薦人數：</b>${game.recommended}</p>
+              <p>⭐ <b>難度：</b>${game.difficulty}</p>
             </div>
           `).join('');
         } else {
           resultDiv.innerHTML = "找不到符合的桌遊。";
         }
-      } catch (err) {
-        console.error("Fetch Error:", err);
-        resultDiv.innerHTML = "搜尋失敗，請稍後再試。";
-      }
+        // 清理
+        delete window[cbName];
+        document.body.removeChild(window._jsonpScript);
+      };
+
+      // 建立並插入 JSONP <script>
+      const script = document.createElement('script');
+      script.src = `${apiBase}?q=${encodeURIComponent(input)}&callback=${cbName}`;
+      window._jsonpScript = script;
+      document.body.appendChild(script);
     }
   </script>
 </body>
