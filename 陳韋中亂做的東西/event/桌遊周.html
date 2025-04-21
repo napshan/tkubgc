@@ -2,52 +2,98 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>組織章程 | 淡江大學桌遊研習社</title>
+  <title>桌遊周 | 淡江大學桌遊研習社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfaf3;
+    }
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 2rem;
+    }
+    section {
+      border: 2px solid #DEB887;
+      border-radius: 10px;
+      background-color: #fffaf0;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    section h2 {
+      margin-top: 0;
+      color: #6a4e3b;
+    }
+    section p {
+      line-height: 1.8;
+      color: #444;
+    }
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-
-  <!-- 導覽列 -->
   <header>
-    <div class="title"><a href="社團.html">淡江大學桌遊研習社</a></div>
+    <div class="title"><a href="../社團.html">淡江大學桌遊研習社</a></div>
     <nav>
       <ul class="dropdown-menu">
         <li class="dropdown">
           <a href="#">組織運作</a>
           <ul class="dropdown-content">
-            <li><a href="org-章程.html">組織章程</a></li>
-            <li><a href="org-會議紀錄.html">會議紀錄</a></li>
-            <li><a href="org-會議通知.html">會議通知</a></li>
-            <li><a href="org-行事曆.html">學期行事曆</a></li>
+            <li><a href="../org-章程.html">組織章程</a></li>
+            <li><a href="../org-會議紀錄.html">會議紀錄</a></li>
+            <li><a href="../org-會議通知.html">會議通知</a></li>
+            <li><a href="../org-行事曆.html">學期行事曆</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#">社團活動經營</a>
           <ul class="dropdown-content">
-            <li><a href="event-上學期.html">上學期</a></li>
-            <li><a href="event-下學期.html">下學期</a></li>
+            <li><a href="../event-上學期.html">上學期</a></li>
+            <li><a href="../event-下學期.html">下學期</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#">財務管理</a>
           <ul class="dropdown-content">
-            <li><a href="finance.html">財務資料</a></li>
-            <li><a href="game-search.html">桌遊搜尋</a></li>
+            <li><a href="../finance.html">財務資料</a></li>
+            <li><a href="../game-search.html">桌遊搜尋</a></li>
           </ul>
         </li>
       </ul>
     </nav>
   </header>
 
-  <!-- 主內容 -->
   <main>
-    <section>
-      <h1>（內容待補）</h1>
+    <section id="p">
+      <h2>P - Plan</h2>
+      <p>規劃桌遊周活動期間的主題與結構，包括抽獎機制、二手攤販擺設、桌遊體驗區等設計，同時向聯華食品、紅牛、軍鬥牌酒吧等廠商申請贊助，並確認場地使用權與學校申請程序。</p>
+    </section>
+    <section id="d">
+      <h2>D - Do</h2>
+      <p>於3/18至3/20實際執行活動，現場架設小木屋攤位、進行桌遊教學與抽獎活動，同步進行二手桌遊販售與互動宣傳，幹部與志工輪班支援與拍攝記錄。</p>
+    </section>
+    <section id="c">
+      <h2>C - Check</h2>
+      <p>透過活動結束後的問卷調查與現場回饋，了解參與師生對桌遊體驗、獎品吸引力與整體氛圍的感受。數據統計包含參與人次、抽獎件數與販售桌遊數量。</p>
+    </section>
+    <section id="a">
+      <h2>A - Act</h2>
+      <p>依據回饋結果修正後續活動方向，例如增加冷門遊戲教學場次、改善抽獎流程、強化現場導引標示與社群宣傳提前預熱，讓下一次桌遊活動更有效率。</p>
     </section>
   </main>
 
-  <!-- 頁尾 -->
   <footer>
     <div>
       <h4>聯絡資料</h4>
@@ -64,9 +110,7 @@
       <h4>相關連結</h4>
       <p><a href="https://www.instagram.com/tku_bgc/">IG</a></p>
       <p><a href="https://www.facebook.com/TkuBGC/?locale=zh_TW">FB</a></p>
-
     </div>
   </footer>
-
 </body>
 </html>
