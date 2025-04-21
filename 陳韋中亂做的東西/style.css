@@ -430,11 +430,61 @@ section.welcome {
   align-items: center;
 }
 
-.welcome img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
+/* 1. 把 banner 最大寬度設跟分類同寬 (例：800px)，置中 */
+.banner {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  position: relative;
+  overflow: hidden;
+}
+/* 圖片全寬，並加輕微模糊 */
+.banner img {
+  width: 100%;
+  display: block;
+  filter: blur(4px) brightness(0.8);
+  transform: scale(1.05); /* 放大一點避免邊緣露白 */
+}
+
+/* 半透明覆蓋層，營造背板感 */
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.3);
+  pointer-events: none;
+}
+
+/* 成立日期文字置中並拉高對比 */
+.banner p {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(0,0,0,0.6);
+}
+
+/* 2. 去掉灰色背景，並讓文字置中 */
+.welcome {
+  margin: 2rem auto;
+  text-align: center;
+}
+.welcome h2,
+.welcome p {
+  margin: 0.5em 0;
+}
+/* 連結也置中 */
+.welcome p a {
+  display: inline-block;
+  margin-top: 1em;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border: 2px solid #0078d7;
+  border-radius: 4px;
+  color: #0078d7;
 }
 
 footer {
