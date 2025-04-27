@@ -2,52 +2,135 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>組織章程 | 淡江大學桌遊研習社</title>
+  <title>社課 | 淡江大學桌遊研習社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfaf3;
+    }
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 2rem;
+    }
+    section {
+      border: 2px solid #DEB887;
+      border-radius: 10px;
+      background-color: #fffaf0;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    section h2 {
+      margin-top: 0;
+      color: #6a4e3b;
+    }
+    section p {
+      line-height: 1.8;
+      color: #444;
+    }
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+      .hover-info {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .hover-info .popover {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  width: 600px;
+  background-color: #fffaf0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1.2rem;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  line-height: 1.6;
+  overflow-x: auto;
+}
+    .hover-info:hover .popover {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- 導覽列 -->
   <header>
-    <div class="title"><a href="社團.html">淡江大學桌遊研習社</a></div>
+    <div class="title"><a href="../社團.html">淡江大學桌遊研習社</a></div>
     <nav>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" style="list-style: none; padding-left: 0;">
         <li class="dropdown">
           <a href="#">組織運作</a>
           <ul class="dropdown-content">
-            <li><a href="org-章程.html">組織章程</a></li>
-            <li><a href="org-會議紀錄.html">會議紀錄</a></li>
-            <li><a href="org-會議通知.html">會議通知</a></li>
-            <li><a href="org-行事曆.html">學期行事曆</a></li>
+            <li><a href="../org-章程.html">組織章程</a></li>
+            <li><a href="../org-會議紀錄.html">會議紀錄</a></li>
+            <li><a href="../org-會議通知.html">會議通知</a></li>
+            <li><a href="../org-行事曆.html">學期行事曆</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#">社團活動經營</a>
           <ul class="dropdown-content">
-            <li><a href="event-上學期.html">上學期</a></li>
-            <li><a href="event-下學期.html">下學期</a></li>
+            <li><a href="../event-上學期.html">上學期</a></li>
+            <li><a href="../event-下學期.html">下學期</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#">財務管理</a>
           <ul class="dropdown-content">
-            <li><a href="finance.html">財務資料</a></li>
-            <li><a href="game-search.html">桌遊搜尋</a></li>
+            <li><a href="../finance.html">財務資料</a></li>
+            <li><a href="../game-search.html">桌遊搜尋</a></li>
           </ul>
         </li>
       </ul>
     </nav>
   </header>
 
-  <!-- 主內容 -->
   <main>
-    <section>
-      <h1>（內容待補）</h1>
+    <section id="p">
+      <h2>P - Plan</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li><a href="https://docs.google.com/document/d/1bN2SHNSYxUCVuBHvRETl6WAJ-qTTwJGj/edit?usp=drive_link&ouid=118304309052394556921&rtpof=true&sd=true">1. 十二屆社課企劃書</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1PZA0WNcNVYUJ2ZqFuW9tCRjlRvIy7a_O?usp=drive_link">2. 會議記錄</a></li>
+      </ul>
+    </section>
+    <section id="<section id="d">
+      <h2>D - Do</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li><a href="https://drive.google.com/drive/folders/1ShhkX1e_UbNZw2jjld_tcKiUfbDRjK1h?usp=drive_link">1. 簽到表</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1VWAZkI_TxK0fqJMUU7TuO-9voTDcnNYh?usp=drive_link">2. 照片</a></li>
+
+      </ul>
+    </section>
+    <section id="c">
+      <h2>C - Check</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li><a href="https://forms.gle/N7uM9P4UXDzCfsaq6">1. 回饋表單(</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1lSrE0muCbT4VrnO2vO_qnWiZmkhahuC3D5rVYLiGEKg/edit?usp=drive_link">2. 回饋表單（excel）</a></li>
+      </ul>
+    </section>
+    <section id="a">
+      <h2>A - Act</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li><a href="https://docs.google.com/document/d/1z1vkGPOc5ZEKE-dpldhe0J8fy3FukNlK/edit?usp=drive_link&ouid=118304309052394556921&rtpof=true&sd=true">1. 成果報告</a></li>
+        <li><a href="https://docs.google.com/document/d/1hE3zvQsHypWbsoeTPx6BLyY3EPRGqYUmVwaoGg4TUCg/edit?usp=drive_link">2. 檢討報告</a></li>
+      </ul>
     </section>
   </main>
 
-  <!-- 頁尾 -->
   <footer>
     <div>
       <h4>聯絡資料</h4>
@@ -64,10 +147,7 @@
       <h4>相關連結</h4>
       <p><a href="https://www.instagram.com/tku_bgc/">IG</a></p>
       <p><a href="https://www.facebook.com/TkuBGC/?locale=zh_TW">FB</a></p>
-
     </div>
   </footer>
-
-
 </body>
 </html>
