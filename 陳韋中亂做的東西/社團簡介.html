@@ -7,6 +7,135 @@
   <!-- 連結原有的 style.css -->
   <link rel="stylesheet" href="style.css">
   <style>
+        .container, .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 250px);
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .container {
+      grid-template-rows: repeat(3, 250px);
+    }
+
+    .card, .center {
+      width: 250px;
+      height: 250px;
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      background-color: #fff;
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 80%;
+      object-fit: cover;
+    }
+
+    .card-front p {
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .card-back {
+      background-color: #8b735b;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotateY(180deg);
+      padding: 10px;
+      font-size: 1em;
+    }
+
+    .card-back-content {
+      text-align: left;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    .card-back-content p {
+      margin: 5px 0;
+    }
+
+    .center {
+      flex-direction: column;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    .center h1 {
+      margin: 0;
+      font-size: 2em;
+      color: white;
+    }
+
+    .center p {
+      font-family: 'cursive';
+      font-size: 1.5em;
+      margin: 10px 0 20px 0;
+      color: white;
+    }
+
+    .theme-colors {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .color-block {
+      width: 25px;
+      height: 25px;
+      margin: 0 5px;
+      border-radius: 5px;
+    }
+
+    .color1 { background-color: #5d432c; }
+    .color2 { background-color: #8b735b; }
+    .color3 { background-color: #d4c1ac; }
+    .color4 { background-color: #eae3da; }
+    .color5 { background-color: #f4f1ed; }
+
+    hr {
+      margin: 60px 0;
+      width: 80%;
+      border: 1px solid #8b735b;
+    }
+
+    h1.main-title {
+      font-size: 2.5em;
+      color: white;
+      margin-bottom: 20px;
+      text-align: center;
+    }
     /* 頁面專用調整 */
     main {
       padding: 2rem;
@@ -202,6 +331,262 @@
         </div>
       </div>
     </section>
+    <div class="container">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="a.png" alt="迎新">
+          <p>迎新</p>
+        </div>
+        <div class="card-back">內容待補</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=七大奇蹟" alt="七大奇蹟">
+          <p>七大奇蹟</p>
+        </div>
+        <div class="card-back">內容待補</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=桌遊周" alt="桌遊周">
+          <p>桌遊周</p>
+        </div>
+        <div class="card-back">內容待補</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=開會!!" alt="開會!!">
+          <p>開會!!</p>
+        </div>
+        <div class="card-back">內容待補</div>
+      </div>
+    </div>
+    <div class="center">
+      <h1>12屆回顧</h1>
+      <p>Tkubgc 12</p>
+      <div class="theme-colors">
+        <div class="color-block color1"></div>
+        <div class="color-block color2"></div>
+        <div class="color-block color3"></div>
+        <div class="color-block color4"></div>
+        <div class="color-block color5"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=社課" alt="社課">
+          <p>社課</p>
+        </div>
+        <div class="card-back">內容待補</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=好多贊助品" alt="好多贊助品">
+          <p>好多贊助品</p>
+        </div>
+        <div class="card-back">內容待補</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=璀璨賓石" alt="璀璨賓石">
+          <p>璀璨賓石</p>
+        </div>
+        <div class="card-back">內容待補</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=下台一鞠躬" alt="下台一鞠躬">
+          <p>下台一鞠躬</p>
+        </div>
+        <div class="card-back">內容待補</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <hr>
+
+  <!-- 12屆幹部 -->
+  <h1 class="main-title">12屆幹部</h1>
+  <div class="grid">
+        <!-- 社長 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=迎新" alt="社長">
+          <p>社長</p>
+        </div>
+        <div class="card-back">
+          <div class="card-back-content">
+            <p>姓名:陳韋中</p>
+            <p>系級:資工二A</p>
+            <p>負責社團對外大大小小事項</p>
+            <p>特色:常常打錯我們其他幹部的名字</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 副社長 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=七大奇蹟" alt="副社長">
+          <p>副社長</p>
+        </div>
+        <div class="card-back">
+          <div class="card-back-content">
+            <p>姓名:洪亦芯</p>
+            <p>系級:資工二A</p>
+            <p>負責協助社長處理事項</p>
+            <p>特色:只要有社長懶得處理的事情，最後都會到他手上</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 活動長 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=桌遊周" alt="活動長">
+          <p>活動長</p>
+        </div>
+        <div class="card-back">
+          <div class="card-back-content">
+            <p>姓名:游士萱</p>
+            <p>系級:歷史三</p>
+            <p>負責發想活動內容</p>
+            <p>特色:喜歡同時做一大堆事情忙死自己</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 財務 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=開會!!" alt="財務">
+          <p>財務</p>
+        </div>
+        <div class="card-back">
+          <div class="card-back-content">
+            <p>姓名:張容綺</p>
+            <p>系級:數學二</p>
+            <p>管錢!!</p>
+            <p>特色:雖然說是管錢的，但有時候腦袋會突然卡住</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 小編 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=社課" alt="小編">
+          <p>小編</p>
+        </div>
+        <div class="card-back">
+          <div class="card-back-content">
+            <p>姓名:林奕綺</p>
+            <p>系級:資工二C</p>
+            <p>IG的貼文都是他設計的喔(如果不好看就去找他</p>
+            <p>特色:基本上除了社團活動以外的時間你不會在社辦看到他(除了玩狼人殺的時候)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 器材1 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=好多的贊助品" alt="器材">
+          <p>器材</p>
+        </div>
+        <div class="card-back">
+          <div class="card-back-content">
+            <p>姓名:杜明道</p>
+            <p>系級:資工二A</p>
+            <p>社團的桌遊他們肯定最了解</p>
+            <p>特色:你會時不時被他冷笑話冷到一下</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 器材2 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=璀璨賓石" alt="器材">
+          <p>器材</p>
+        </div>
+        <div class="card-back">
+          <div class="card-back-content">
+            <p>姓名:劉松旻</p>
+            <p>系級:</p>
+            <p>他要開店當大老闆了，以後缺錢找他</p>
+            <p>特色:平常看起來人畜無害，兇起來的時候給你好看</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 器材3 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=下台一鞠躬" alt="器材">
+          <p>下台一鞠躬</p>
+        </div>
+        <div class="card-back">
+          <div class="card-back-content">
+            <p>姓名:柯昕妤</p>
+            <p>系級:會計</p>
+            <p>器材組裡唯一的女生，力氣應該很大(?但沒有比我們活動長大</p>
+            <p>特色:就是一個特色</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 認證 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/250x200?text=下台一鞠躬" alt="認證">
+          <p>下台一鞠躬</p>
+        </div>
+        <div class="card-back">
+          <div class="card-back-content">
+            <p>姓名:徐碩廷</p>
+            <p>系級:電機</p>
+            <p>關於社團學分的事情問他就對了!!</p>
+            <p>特色:我們社長最常打錯名字的人就是他</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
   </main>
 
   <!-- 頁尾 -->
