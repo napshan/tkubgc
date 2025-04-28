@@ -7,15 +7,14 @@
   <!-- 連結原有的 style.css -->
   <link rel="stylesheet" href="style.css">
   <style>
-    .container, .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 250px);
-      gap: 20px;
-      justify-content: center;
-      margin-top: 30px;
-      margin-left: auto;
-    margin-right: auto;
-    }
+  .container, .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    gap: 30px; /* 調成30px更好看 */
+    width: 840px; /* 3格250 + 2格30= 840 */
+    margin: 30px auto 0 auto;
+  }
+
   .org-image {
     max-width: 100%;
     height: auto;
@@ -25,11 +24,12 @@
     .container {
       grid-template-rows: repeat(3, 250px);
     }
-  hr {
-  width: 790px;
-  border: 1px solid #8b735b;
+hr {
+  width: 840px;
   margin: 60px auto;
+  border: 1px solid #8b735b;
 }
+
 
     .card, .center {
       width: 250px;
@@ -598,15 +598,14 @@
     <div class="card">
       <div class="card-inner">
         <div class="card-front">
-          <img src="https://via.placeholder.com/250x200?text=認證" alt="認證">
-          <p>認證</p>
+          <img src="https://via.placeholder.com/250x200?text=認證" alt="十二屆">
+          <p>十二屆</p>
         </div>
         <div class="card-back">
           <div class="card-back-content">
-            <p>姓名:徐碩廷</p>
-            <p>系級:電機</p>
-            <p>關於社團學分的事情問他就對了!!</p>
-            <p>特色:我們社長最常打錯名字的人就是他</p>
+            <p>姓名:十二屆小精靈</p>
+            <p>系級:桌遊社</p>
+            <p>一群歡喜冤家</p>
           </div>
         </div>
       </div>
