@@ -50,6 +50,8 @@
 
 #plans-container {
   position: relative;
+  text-align: center;
+  width: 100%;
 }
 
 #arrow-svg {
