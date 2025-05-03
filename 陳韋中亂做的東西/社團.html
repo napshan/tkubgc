@@ -5,12 +5,10 @@
   <title>首頁 | 淡江大學桌遊研習社</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
- <style>
-    /* 全域置中 */
+  <style>
     main, footer, header, .banner, .systematics, .mind, .welcome {
       text-align: center;
     }
-    /* 限制最大寬度避免橫向滾動 */
     body {
       max-width: 100vw;
       overflow-x: hidden;
@@ -22,8 +20,6 @@
       word-break: keep-all;
       white-space: nowrap;
     }
-
-    /* 四格版型 */
     .systematics {
       display: flex;
       flex-wrap: wrap;
@@ -41,158 +37,107 @@
     .systematics h2 {
       margin-top: 0.5em;
     }
-
-    /* 其他區塊間距 */
-    .mind{
-      	margin: 2rem auto;
-      	max-width: 800px;
+    .mind, .welcome {
+      margin: 2rem auto;
+      max-width: 800px;
     }
-	.welcome{
-      		margin: 2rem auto;
-      		max-width: 800px;
-    	}
-	 .welcome .info {
-  		text-align: center;
-	}
-
-
+    .welcome .info {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
 
-  <!-- 導覽列 -->
-  <header>
-    <div class="title"><a href="社團.html">淡江大學桌遊研習社</a></div>
-    <nav>
-      <ul class="dropdown-menu">
-        <li class="dropdown">
-          <a href="#">組織運作</a>
-          <ul class="dropdown-content">
-		<li><a href="社團簡介.html">社團簡介</a></li>
-           	 <li><a href="org-章程.html">組織章程</a></li>
-            	<li><a href="org-會議紀錄.html">會議紀錄</a></li>
-           	 <li><a href="org-會議通知.html">會議通知</a></li>
-            	<li><a href="org-行事曆.html">學期行事曆</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">社團活動經營</a>
-          <ul class="dropdown-content">
-            <li><a href="event-上學期.html">上學期</a></li>
-            <li><a href="event-下學期.html">下學期</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">財務管理</a>
-          <ul class="dropdown-content">
-            <li><a href="finance.html">財務資料</a></li>
-            <li><a href="game-search.html">桌遊搜尋</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <div class="title"><a href="社團.html">淡江大學桌遊研習社</a></div>
+  <nav>
+    <ul class="dropdown-menu">
+      <li class="dropdown"><a href="#">組織運作</a>
+        <ul class="dropdown-content">
+          <li><a href="社團簡介.html">社團簡介</a></li>
+          <li><a href="org-章程.html">組織章程</a></li>
+          <li><a href="org-會議紀錄.html">會議紀錄</a></li>
+          <li><a href="org-會議通知.html">會議通知</a></li>
+          <li><a href="org-行事曆.html">學期行事曆</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="#">社團活動經營</a>
+        <ul class="dropdown-content">
+          <li><a href="event-上學期.html">上學期</a></li>
+          <li><a href="event-下學期.html">下學期</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="#">財務管理</a>
+        <ul class="dropdown-content">
+          <li><a href="finance.html">財務資料</a></li>
+          <li><a href="game-search.html">桌遊搜尋</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- 主內容 -->
-  <main>
-    <!-- 1. Hero 橫幅 -->
-    <section class="hero">
-      <div class="overlay"></div>
-      <h1>桌遊研習社</h1>
-    </section>
+<main>
+  <section class="hero">
+    <h1>桌遊研習社</h1>
+  </section>
 
-    <!-- 2. 社團成立時間 -->
-    <section class="founding">
-      <p>社團成立日期：2013 年 6 月 3 日</p>
-    </section>
+  <section class="founding">
+    <p>社團成立日期：2013 年 6 月 3 日</p>
+  </section>
 
-    <!-- 3. 社團宗旨 -->
-    <section class="mission">
-      <h2>社團宗旨</h2>
-      <p>
-        近年來桌上遊戲越發盛行，有鑑於此，集合對桌上遊戲有共同興趣者，
-        成立桌遊同好的平台，並從中培養正確的桌遊知識，增進邏輯思考、反應能力。
-      </p>
-      <p>
-        藉由社團活動及桌遊週，推廣桌上遊戲這項活動，建立正確的桌遊知識與觀念，
-        帶動正向的桌遊風氣，也讓喜愛桌遊的人有一個能夠互相交流的平台。
-      </p>
-      <p>
-        此外，對桌遊設計有興趣的人可以有個一起討論的空間，並與幹部社員一同試玩、修改，
-        獲得較完善的幫助，更可從設計桌遊的過程中增進交流，獲得前所未有的成就感。
-      </p>
-    </section>
+  <section class="mission">
+    <h2>社團宗旨</h2>
+    <p>近年來桌上遊戲越發盛行，集合對桌上遊戲有共同興趣者成立桌遊同好平台，培養正確桌遊知識與邏輯思考能力。</p>
+    <p>藉由活動及桌遊週推廣，建立正確觀念，帶動正向風氣，提供交流平台。</p>
+    <p>對設計有興趣者也能一起討論、試玩與修改，從設計中獲得交流與成就感。</p>
+  </section>
 
-    <!-- 2. 四種桌遊分類 -->
-    <section class="systematics">
-      <div>
-        <img src="image/cat.webp" alt="爆炸貓">
-        <h2><a href="party.html">派對</a></h2>
-      </div>
-      <div>
-        <img src="image/root.webp" alt="忍者之夜">
-        <h2><a href="camp.html">陣營</a></h2>
-      </div>
-      <div>
-        <img src="image/dream.webp" alt="築夢頌">
-        <h2><a href="co-op.html">合作</a></h2>
-      </div>
-      <div>
-        <img src="image/TRAJAN.webp" alt="圖拉真">
-        <h2><a href="strategy.html">策略</a></h2>
-      </div>
-    </section>
+  <section class="systematics">
+    <div><img src="image/cat.webp" alt="爆炸貓"><h2><a href="party.html">派對</a></h2></div>
+    <div><img src="image/root.webp" alt="忍者之夜"><h2><a href="camp.html">陣營</a></h2></div>
+    <div><img src="image/dream.webp" alt="築夢頌"><h2><a href="co-op.html">合作</a></h2></div>
+    <div><img src="image/TRAJAN.webp" alt="圖拉真"><h2><a href="strategy.html">策略</a></h2></div>
+  </section>
 
-    <!-- 3. 鼠歌頌 -->
-    <section class="mind">
-      <h1>鼠歌頌</h1>
-      <h2>桌遊社裡影飄移，鼠哥閃現無聲息。</h2>
-      <h2>夜深棋局未曾止，偷窺骰子笑嘻嘻。</h2>
-      <h2>靈活身姿如鬼魅，飢腸雷鳴探尋跡。</h2>
-      <h2>餅乾碎屑皆收盡，嚼作傳說留傳奇。</h2>
-      <h2>不懼人間喧囂事，自成一脈江湖裡。</h2>
-      <h2>若論靈慧與風骨，當封你為鼠中奇！</h2>
-      <p><a href="https://youtu.be/dQw4w9WgXcQ?si=qtYVu6YWkpImUKeX">瞭解更多</a></p>
-    </section>
+  <section class="mind">
+    <h1>鼠歌頌</h1>
+    <h2>桌遊社裡影飄移，鼠哥閃現無聲息。</h2>
+    <h2>夜深棋局未曾止，偷窺骰子笑嘻嘻。</h2>
+    <h2>靈活身姿如鬼魅，飢腸雷鳴探尋跡。</h2>
+    <h2>餅乾碎屑皆收盡，嚼作傳說留傳奇。</h2>
+    <h2>不懼人間喧囂事，自成一脈江湖裡。</h2>
+    <h2>若論靈慧與風骨，當封你為鼠中奇！</h2>
+    <p><a href="https://youtu.be/dQw4w9WgXcQ?si=qtYVu6YWkpImUKeX">瞭解更多</a></p>
+  </section>
 
-    <!-- 4. 春季招募 -->
-    <section class="welcome">
-      <div class="info">
-        <h2>淡江桌遊社 2025 春季招募正式開啟！</h2>
-        <p>
-          報名開放：2/14，一起翻開新篇章！<br>
-          策略對決、心機博弈<br>
-          角色扮演、歡樂派對<br>
-          無論你是高手還是新手<br>
-          這裡都有你的舞台<br>
-          腦力激盪，歡樂無限<br>
-          快來加入，一起開局
-        </p>
-        <p><a href="https://forms.gle/rodHBvqaTGAUWBhL8">報名表單</a></p>
-      </div>
-    </section>
-  </main>
-
-  <!-- 頁尾 -->
-  <footer>
-    <div>
-      <h4>聯絡資料</h4>
-      <p>淡江大學桌遊研習社</p>
-      <p>社團辦公室：SG104</p>
-      <p>借用器材請私訊社帳</p>
+  <section class="welcome">
+    <div class="info">
+      <h2>淡江桌遊社 2025 春季招募正式開啟！</h2>
+      <p>報名開放：2/14，一起翻開新篇章！<br>策略對決、心機博弈<br>角色扮演、歡樂派對<br>無論你是高手還是新手<br>這裡都有你的舞台<br>腦力激盪，歡樂無限<br>快來加入，一起開局</p>
+      <p><a href="https://forms.gle/rodHBvqaTGAUWBhL8">報名表單</a></p>
     </div>
-    <div>
-      <h4>公關長</h4>
-      <p>姓名：陳韋中</p>
-      <p>Email：chenwj.taipei@gmail.com</p>
-    </div>
-    <div>
-      <h4>相關連結</h4>
-      <p><a href="https://www.instagram.com/tku_bgc/">IG</a></p>
-      <p><a href="https://www.facebook.com/TkuBGC/?locale=zh_TW">FB</a></p>
+  </section>
+</main>
 
-    </div>
-  </footer>
+<footer>
+  <div>
+    <h4>聯絡資料</h4>
+    <p>淡江大學桌遊研習社</p>
+    <p>社團辦公室：SG104</p>
+    <p>借用器材請私訊社帳</p>
+  </div>
+  <div>
+    <h4>公關長</h4>
+    <p>姓名：陳韋中</p>
+    <p>Email：chenwj.taipei@gmail.com</p>
+  </div>
+  <div>
+    <h4>相關連結</h4>
+    <p><a href="https://www.instagram.com/tku_bgc/">IG</a></p>
+    <p><a href="https://www.facebook.com/TkuBGC/?locale=zh_TW">FB</a></p>
+  </div>
+</footer>
 
 </body>
 </html>
