@@ -106,7 +106,7 @@ hr {
     .center h1 {
       margin: 0;
       font-size: 2em;
-      color: white;
+      color:#5d432c;
     }
 
     .center p {
@@ -171,79 +171,6 @@ hr {
       color: #777;
     }
     
-    /* ------------------------------ */
-    /* 以下為組織架構圖專用 CSS，採用純 HTML/CSS 90° 轉折效果 */
-    .org-chart {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 2rem;
-    }
-    /* 節點 (社長、副社長與各部門) */
-    .org-chart .org-node {
-      margin: 0.5rem 0;
-      padding: 0.5rem 1rem;
-      background-color: #f0e6d6;
-      border-radius: 10px;
-      width: fit-content;
-      text-align: center;
-      font-weight: bold;
-    }
-    /* 社長→副社長之間的直線 */
-    .org-chart .org-line {
-      width: 2px;
-      height: 20px;
-      background-color: #999;
-      margin: 0.5rem 0;
-    }
-    /* 副社長下方的大橫線 */
-    .org-chart .org-main-connector {
-      width: 80%;
-      height: 2px;
-      background-color: #999;
-      margin: 1rem auto 2rem;
-      position: relative;
-    }
-    /* 幹部群容器 */
-    .org-chart .org-branch {
-      width: 80%;
-      display: flex;
-      justify-content: space-around;
-    }
-    /* 每個幹部欄位 */
-    .org-chart .org-column {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    /* 利用 ::before 畫出水平連線（左側轉折） */
-    .org-chart .org-column::before {
-      content: "";
-      position: absolute;
-      top: -2px;           /* 對齊大橫線 */
-      width: 20px;         /* 水平線長度，可依需求調整 */
-      height: 2px;
-      left: 50%;
-      transform: translateX(-100%);
-      background-color: #999;
-    }
-    /* 利用 ::after 畫出垂直連線（從大橫線延伸至節點上方） */
-    .org-chart .org-column::after {
-      content: "";
-      position: absolute;
-      top: 0;              /* 從大橫線開始 */
-      left: 50%;
-      width: 2px;
-      height: 30px;        /* 垂直線長度，可依需求調整 */
-      transform: translateX(-50%);
-      background-color: #999;
-    }
-    /* 調整幹部節點與連線的間距 */
-    .org-chart .org-column .org-node {
-      margin-top: 34px; /* 30px (垂直線) + 4px 間距 */
-    }
-    /* ------------------------------ */
   </style>
 </head>
 <body>
@@ -311,7 +238,7 @@ hr {
           <img src="image/迎新[1].jpg" alt="迎新">
           <p>迎新</p>
         </div>
-        <div class="card-back">內容待補</div>
+        <div class="card-back">上幹後我們的第一個活動!!</div>
       </div>
     </div>
     <div class="card">
@@ -320,7 +247,7 @@ hr {
           <img src="image/七大奇蹟比賽.JPG" alt="七大奇蹟">
           <p>七大奇蹟</p>
         </div>
-        <div class="card-back">內容待補</div>
+        <div class="card-back">下幹前我們最後一個活動`^`</div>
       </div>
     </div>
     <div class="card">
@@ -329,7 +256,7 @@ hr {
           <img src="image/桌遊周[1].jpg" alt="桌遊周">
           <p>桌遊周</p>
         </div>
-        <div class="card-back">內容待補</div>
+        <div class="card-back">我們終於做得跟以前不一樣了!好盛大</div>
       </div>
     </div>
     <div class="card">
@@ -338,7 +265,7 @@ hr {
           <img src="image/遊戲邀請.jpg" alt="開會!!">
           <p>遊戲邀請!!</p>
         </div>
-        <div class="card-back">內容待補</div>
+        <div class="card-back">居然收到了遊戲邀請^o^受寵若驚</div>
       </div>
     </div>
     <div class="center">
@@ -358,7 +285,7 @@ hr {
           <img src="image/社課.JPG" alt="社課">
           <p>社課</p>
         </div>
-        <div class="card-back">內容待補</div>
+        <div class="card-back">希望所有社員會喜歡我們平常上課玩的桌遊~</div>
       </div>
     </div>
     <div class="card">
@@ -367,7 +294,7 @@ hr {
           <img src="image/好多贊助品[1].jpg" alt="好多贊助品">
           <p>好多贊助品</p>
         </div>
-        <div class="card-back">內容待補</div>
+        <div class="card-back">哇是600包卡迪那，吃都要吃不完了</div>
       </div>
     </div>
     <div class="card">
@@ -376,7 +303,7 @@ hr {
           <img src="image/璀璨寶石比賽.JPG" alt="璀璨賓石">
           <p>璀璨賓石</p>
         </div>
-        <div class="card-back">內容待補</div>
+        <div class="card-back">這個比賽都快要變成每年標配了</div>
       </div>
     </div>
     <div class="card">
@@ -385,7 +312,7 @@ hr {
           <img src="https://via.placeholder.com/250x200?text=下台一鞠躬" alt="下台一鞠躬">
           <p>下台一鞠躬</p>
         </div>
-        <div class="card-back">內容待補</div>
+        <div class="card-back">我們下幹啦!辛苦所有幹部和過程中給我們幫助的人</div>
       </div>
     </div>
   </div>
