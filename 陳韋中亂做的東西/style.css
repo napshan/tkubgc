@@ -1,3 +1,15 @@
+/*社團簡介-傳承*/
+.inherit-link {
+  color: #5d432c;
+  cursor: pointer;
+  font-size: 0.7em;
+}
+
+.inherit-link:hover {
+  text-decoration: underline;
+}
+/*-------*/
+
 /* 1. Hero 橫幅 */
 .hero {
   position: relative;
