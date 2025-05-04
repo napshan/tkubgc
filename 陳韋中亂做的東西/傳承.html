@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>社團簡介 | 淡江大學桌遊研習社</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 連結原有的 style.css -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+  .container, .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    gap: 30px; /* 調成30px更好看 */
+    width: 840px; /* 3格250 + 2格30= 840 */
+    margin: 30px auto 0 auto;
+  }
+
+  .org-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+    .container {
+      grid-template-rows: repeat(3, 250px);
+    }
+hr {
+  width: 900px;
+  margin: 60px auto;
+  border: 1px solid #8b735b;
+}
+
+    .card, .center {
+      width: 250px;
+      height: 250px;
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      background-color: #fff;
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 80%;
+      object-fit: cover;
+    }
+
+    .card-front p {
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .card-back {
+      background-color: #8b735b;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotateY(180deg);
+      padding: 10px;
+      font-size: 1em;
+    }
+
+    .card-back-content {
+      text-align: left;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    .card-back-content p {
+      margin: 5px 0;
+    }
+
+    .center {
+      flex-direction: column;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    .center h1 {
+      margin: 0;
+      font-size: 2em;
+      color:#5d432c;
+    }
+
+    .center p {
+      font-family: 'cursive';
+      font-size: 1.5em;
+      margin: 10px 0 20px 0;
+      color: white;
+    }
+
+    .theme-colors {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .color-block {
+      width: 25px;
+      height: 25px;
+      margin: 0 5px;
+      border-radius: 5px;
+    }
+
+    .color1 { background-color: #5d432c; }
+    .color2 { background-color: #8b735b; }
+    .color3 { background-color: #d4c1ac; }
+    .color4 { background-color: #eae3da; }
+    .color5 { background-color: #f4f1ed; }
+
+    h1.main-title {
+      font-size: 2.5em;
+      color: #4A3F35;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    /* 頁面專用調整 */
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #4A3F35;
+    }
+    .section {
+      margin-bottom: 3rem;
+    }
+    .section p {
+      line-height: 1.8;
+      text-align: justify;
+      color: #333;
+    }
+    .image-banner {
+      width: 100%;
+      height: 300px;
+      background-color: #ddd;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #777;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <header>
+    <div class="title"><a href="社團.html">淡江大學桌遊研習社</a></div>
+    <nav>
+      <ul class="dropdown-menu">
+        <li class="dropdown">
+          <a href="#">組織運作</a>
+          <ul class="dropdown-content">
+            <li><a href="社團簡介.html">社團簡介</a></li>
+            <li><a href="org-章程.html">組織章程</a></li>
+            <li><a href="org-會議紀錄.html">會議紀錄</a></li>
+            <li><a href="org-會議通知.html">會議通知</a></li>
+            <li><a href="org-行事曆.html">學期行事曆</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">社團活動經營</a>
+          <ul class="dropdown-content">
+            <li><a href="event-上學期.html">上學期</a></li>
+            <li><a href="event-下學期.html">下學期</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">財務管理</a>
+          <ul class="dropdown-content">
+            <li><a href="finance.html">財務資料</a></li>
+            <li><a href="game-search.html">桌遊搜尋</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 主內容 -->
+  <main>
+  
+  </main>
+
+  <!-- 頁尾 -->
+  <footer>
+    <div>
+      <h4>聯絡資料</h4>
+      <p>淡江大學桌遊研習社</p>
+      <p>社團辦公室：SG104</p>
+      <p>借用器材請私訊社帳</p>
+    </div>
+    <div>
+      <h4>公關長</h4>
+      <p>姓名：陳韋中</p>
+      <p>Email：chenwj.taipei@gmail.com</p>
+    </div>
+    <div>
+      <h4>相關連結</h4>
+      <p><a href="https://www.instagram.com/tku_bgc/">IG</a></p>
+      <p><a href="https://www.facebook.com/TkuBGC/?locale=zh_TW">FB</a></p>
+
+    </div>
+  </footer>
+
+</body>
+</html>
