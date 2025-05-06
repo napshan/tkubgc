@@ -75,6 +75,11 @@ header {
     box-sizing: border-box;
     overflow-wrap: break-word;
   }
+/* 偵測在最右邊的 dropdown 給它一個 class 例如 .dropdown-right */
+.dropdown-right .dropdown-content {
+    left: auto;
+    right: 0;
+}
 
 
 
