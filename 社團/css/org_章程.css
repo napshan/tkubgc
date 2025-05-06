@@ -4,17 +4,6 @@
   overflow: visible; 
 }
 
-/* 箭頭 SVG容器 */
-#arrow-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 2;
-}
-
 marker#arrowhead polygon {
   fill: #0078d7;
 }
