@@ -1,11 +1,15 @@
-#plans-container { 
-    position: relative; 
-    overflow: visible; 
-  }
+#plans-container {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
 
   #arrow-svg {
     position: absolute;
-    top: 0; left: 0;
+    top:    0;
+    right:  0;
+    bottom: 0;
+    left:   0;    
     width: 100%;
     height: 100%; 
     /* 不一定要 height:100%，有 bottom:0 就會自動拉滿 */
@@ -21,6 +25,9 @@
   .plan-table td {
     position: relative;
     z-index: 1;
+    border: 1px solid #d8cab0;
+    padding: 0.8em;
+    vertical-align: top;
   }
 
 body {
