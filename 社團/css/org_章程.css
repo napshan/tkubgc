@@ -1,41 +1,89 @@
-#plans-container {
-  position: relative;
-  text-align: center;
-  width: 100%;
+/* 章程主容器 plans-container */
+#plans-container { 
+  position: relative; 
+  overflow: visible; 
 }
 
-  #arrow-svg {
-    position: absolute;
-    top:    0;
-    right:  0;
-    bottom: 0;
-    left:   0;    
-    width: 100%;
-    height: 100%; 
-    /* 不一定要 height:100%，有 bottom:0 就會自動拉滿 */
-    pointer-events: none;
-    z-index: 2;
-  }
+/* 箭頭 SVG容器 */
+#arrow-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+}
 
-  marker#arrowhead polygon {
-    fill: #0078d7;
-  }
+marker#arrowhead polygon {
+  fill: #0078d7;
+}
 
-  .plan-table th,
-  .plan-table td {
-    position: relative;
-    z-index: 1;
-    border: 1px solid #d8cab0;
-    padding: 0.8em;
-    vertical-align: top;
-  }
+/* 計畫表格 (112、113 年計畫表格) */
+.plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  text-align: center;
+}
 
-body {
-    font-family: "Arial", sans-serif;
-    background-color: #fdfaf5;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
+.plan-table th,
+.plan-table td {
+  border: 1px solid #d8cab0;
+  padding: 0.8em;
+  vertical-align: top;
+}
+
+.plan-table th {
+  background-color: #f7f2e9;
+  text-align: center;
+}
+
+.plan-table tbody tr:nth-child(even) {
+  background-color: #fbf8f0;
+}
+
+.plan-table ol, .plan-table ul {
+  margin: 0.2em 0 0.2em 1.2em;
+}
+
+/* 本屆主題的表格樣式 (直接寫在inline style，也可整理成這樣統一) */
+.theme-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f9f6f1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.theme-table th {
+  background-color: #eae3da;
+  color: #4A3F35;
+  padding: 12px;
+  border: 1px solid #d4c1ac;
+}
+
+.theme-table td {
+  padding: 12px;
+  border: 1px solid #d4c1ac;
+  text-align: center;
+}
+
+/* 章程內文 (pre block) */
+#org-章程 pre {
+  background-color: #fdfaf5;
+  padding: 20px;
+  border-radius: 8px;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: auto;
+}
+
+/* 章節標題 */
+h1, h2 {
+  text-align: center;
+  color: #4A3F35;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
