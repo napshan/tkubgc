@@ -1,0 +1,34 @@
+#plans-container { 
+    position: relative; 
+    overflow: visible; 
+  }
+
+  #arrow-svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%; 
+    /* 不一定要 height:100%，有 bottom:0 就會自動拉滿 */
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  marker#arrowhead polygon {
+    fill: #0078d7;
+  }
+
+  .plan-table th,
+  .plan-table td {
+    position: relative;
+    z-index: 1;
+  }
+
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #fdfaf5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }

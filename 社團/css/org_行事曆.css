@@ -1,0 +1,51 @@
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+  }
+  main {
+    padding: 2rem;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .calendar-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .calendar-section {
+    width: 50%;
+  }
+  .calendar-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+  }
+  ul.calendar {
+    list-style-type: none;
+    padding: 0;
+  }
+  ul.calendar li {
+    background-color: #fff;
+    margin: 0.5rem 0;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  body {
+    font-family: "Arial", sans-serif;
+    background-color: #fdfaf5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
