@@ -90,6 +90,14 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+ .pdca-links {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
   .pdca-links a {
     text-decoration: none;
     padding: 6px 10px;
