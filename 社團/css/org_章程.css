@@ -85,9 +85,16 @@ h1, h2 {
     max-width: 100%;
     overflow-x: hidden;
   }
-.section img {
-  display: block;      /* 轉成區塊元素，才能用 margin 自動置中 */
-  margin: 2rem auto;   /* 上下 2rem，左右自動置中 */
-  max-width: 100%;     /* 確保圖片不超出容器寬度 */
-  height: auto;        /* 維持原始比例 */
+/* 讓 section 內所有內容水平置中 */
+.section {
+  text-align: center;
 }
+
+/* 圖片設定為 inline‐block，並在上下留 2rem 間距 */
+.section img {
+  display: inline-block;
+  margin: 2rem 0;
+  max-width: 100%;
+  height: auto;
+}
+
