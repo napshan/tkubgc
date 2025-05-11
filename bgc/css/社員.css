@@ -1,0 +1,190 @@
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #fdfaf5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  h1, h2 {
+    text-align: center;
+    color: #4A3F35;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 60px; /* 上下 40px, 左右 60px 間距 */
+    padding: 20px 60px; /* 整個區塊左右內縮 60px，上下 20px */
+    box-sizing: border-box;
+  }
+  
+  .photo-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .analysis-box {
+    background-color: #f9f5f0;
+    border-left: 5px solid #8b735b;
+    padding: 20px 30px;
+    margin: 40px 60px;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border-radius: 8px;
+  }
+  .analysis-link {
+    display: inline-block;
+    margin-left: 1rem;
+    padding: 0.3rem 0.6rem;
+    background-color: #6e4f3a;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .analysis-link:hover {
+    background-color: #5c4033;
+  }
+  
+  .traffic-analysis {
+    margin: 60px auto;
+    max-width: 900px;
+    padding: 0 20px;
+  }
+  
+  .traffic-analysis h2 {
+    text-align: center;
+    color: #4A3F35;
+    margin-bottom: 20px;
+  }
+  .traffic-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fdfaf5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .traffic-table th,
+  .traffic-table td {
+    padding: 12px;
+    border: 1px solid #d4c1ac;
+    text-align: center;
+    color: #4A3F35;
+  }
+  
+  .traffic-table thead {
+    background-color: #eae3da;
+    font-weight: bold;
+  }
+  
+  /* 滑鼠移上去的效果 */
+  .traffic-table tbody tr:hover {
+    background-color: #f1ece6;
+    transition: background-color 0.3s;
+  }
+  
+  /* 高觀看數標記 (手動標記) */
+  .highlight {
+    background-color: #fff8d5;
+  }
+  /* —— 廠商分析區塊 —— */
+.sponsor-analysis {
+  width: 80%;
+  margin: 2rem auto;
+}
+.sponsor-analysis h2 {
+  color: #4A3F35;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* —— 贊助廠商表格 —— */
+.sponsor-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fdfaf5;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.sponsor-table th,
+.sponsor-table td {
+  padding: 12px;
+  border: 1px solid #d4c1ac;
+  text-align: left;
+  vertical-align: top;
+}
+.sponsor-table thead tr {
+  background-color: #eae3da;
+  color: #4A3F35;
+}
+
+/* —— 分析文字框（沿用 analysis-box） —— */
+/* 如果需要微調，可在這裡再覆寫 */
+.sponsor-analysis .analysis-box {
+  margin-top: 1rem;
+}
+/* 社團小聚 容器 */
+.gather-section {
+  text-align: center;
+  margin: 2rem auto;
+}
+.gather-section h2 {
+  font-size: 1.6rem;
+  color: #5b4636;
+  margin-bottom: 1rem;
+}
+
+/* 2×2 等寬表格 */
+.gather-table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  table-layout: fixed;  /* 固定欄寬 */
+}
+.gather-table td {
+  border: 1px solid #e0dcd3;
+  height: 300px;        /* 可依需求調整高度 */
+  padding: 0;           /* 內容容器內再留間距 */
+  vertical-align: middle;
+}
+
+/* 置中容器 */
+.cell-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直置中 */
+  align-items: center;     /* 水平置中 */
+  height: 100%;
+  padding: 1rem;           /* 內邊距 */
+  text-align: center;
+}
+
+/* 標題 & 文字 */
+.cell-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #5b4636;
+}
+.cell-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4b3f2f;
+}
+
+/* 圖片 */
+.cell-content img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+

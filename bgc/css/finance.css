@@ -1,0 +1,56 @@
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #fdfaf5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  /* finance.css */
+/* finance.css — 米色系表格美化 */
+
+.finance-table {
+  width: 90%;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  background-color: #fffaf0; /* 薄荷奶油色背景 */
+}
+
+.finance-table th,
+.finance-table td {
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e0dcd3; /* 淺灰米色分隔線 */
+}
+
+.finance-table th {
+  background-color: #d8c3a5;   /* 暖米色表頭 */
+  color: #5b4636;              /* 深木色文字 */
+  font-weight: 600;
+}
+
+.finance-table tr:nth-child(even) td {
+  background-color: #f5efe6;   /* 偶數列淡米色 */
+}
+
+.finance-table tr:nth-child(odd) td {
+  background-color: #fffaf0;   /* 奇數列乳白色 */
+}
+
+.finance-table tr:hover td {
+  background-color: #eae1d9;   /* 滑鼠經過微棕米色 */
+}
+
+.finance-table td {
+  color: #4b3f2f;              /* 棕褐色文字 */
+}
+.finance-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  color: #5b4636; /* 米色系深色文字 */
+}

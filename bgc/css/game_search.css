@@ -1,0 +1,146 @@
+.search-section {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .search-section input {
+    width: calc(100% - 100px);
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .search-section button {
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    background: #0078d7;
+    color: #fff;
+    cursor: pointer;
+  }
+  /* 一列一列顯示，文字左、圖右 */
+.game-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e0d6c6;
+  border-radius: 6px;
+  background-color: #fefaf3;
+  box-sizing: border-box;
+}
+
+/* 文字區域自動撐滿 */
+.game-info {
+  flex: 1 1 auto;
+}
+
+/* 圖片固定寬度，維持長寬比 */
+.game-img {
+  flex: 0 0 120px;
+  width: 120px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+  .more-link {
+    max-width: 600px;
+    margin: 1rem auto 2rem;
+    text-align: right;
+    font-size: 0.9rem;
+  }
+  .more-link span {
+    margin: 0 0.3rem;
+  }
+  .more-link a {
+    color: #0078d7;
+    text-decoration: none;
+  }
+  .more-link a:hover {
+    text-decoration: underline;
+  }
+  body {
+    font-family: "Arial", sans-serif;
+    background-color: #fdfaf5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .note-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 10px 0 30px;
+    padding: 20px 30px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #8b735b;
+    border-radius: 8px;
+    font-size: 0.9em;
+    color: #444;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  
+  .search-box {
+    background-color: #f9f9f9;
+    border-left: 6px solid #8b735b;
+    padding: 30px 40px;
+    margin: 40px auto;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .search-box h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .note-category {
+    margin-bottom: 20px;
+  }
+  
+  .note-category h3 {
+    font-size: 1em;
+    color: #444;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+  }
+  
+  .note-category p {
+    margin: 4px 0;
+    color: #555;
+  }
+  
+  .search-input {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .search-input input[type="text"] {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .search-input button {
+    padding: 8px 16px;
+    background-color: #8b735b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .search-input button:hover {
+    background-color: #6a5645;
+  }
+  

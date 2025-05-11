@@ -1,0 +1,180 @@
+.container, .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    gap: 30px; /* 調成30px更好看 */
+    width: 840px; /* 3格250 + 2格30= 840 */
+    margin: 30px auto 0 auto;
+  }
+
+  .org-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+    .container {
+      grid-template-rows: repeat(3, 250px);
+    }
+hr {
+  width: 900px;
+  margin: 60px auto;
+  border: 1px solid #8b735b;
+}
+
+    .card, .center {
+      width: 250px;
+      height: 250px;
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      background-color: #fff;
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 80%;
+      object-fit: cover;
+    }
+
+    .card-front p {
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .card-back {
+      background-color: #8b735b;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotateY(180deg);
+      padding: 10px;
+      font-size: 1em;
+    }
+
+    .card-back-content {
+      text-align: left;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    .card-back-content p {
+      margin: 5px 0;
+    }
+
+    .center {
+      flex-direction: column;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    .center h1 {
+      margin: 0;
+      font-size: 2em;
+      color:#5d432c;
+    }
+
+    .center p {
+      font-family: 'cursive';
+      font-size: 1.5em;
+      margin: 10px 0 20px 0;
+      color: white;
+    }
+
+    .theme-colors {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .color-block {
+      width: 25px;
+      height: 25px;
+      margin: 0 5px;
+      border-radius: 5px;
+    }
+
+    .color1 { background-color: #5d432c; }
+    .color2 { background-color: #8b735b; }
+    .color3 { background-color: #d4c1ac; }
+    .color4 { background-color: #eae3da; }
+    .color5 { background-color: #f4f1ed; }
+
+    h1.main-title {
+      font-size: 2.5em;
+      color: #4A3F35;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    /* 頁面專用調整 */
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #4A3F35;
+    }
+    .section {
+      margin-bottom: 3rem;
+    }
+    .section p {
+      line-height: 1.8;
+      text-align: justify;
+      color: #333;
+    }
+    .image-banner {
+      width: 100%;
+      height: 400px;  /* 你可以改成 60vh 會更自適應 */
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .image-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;  /* 這是關鍵，讓圖片填滿且不變形 */
+      display: block;
+    }
+    
+    section.mind h1 {
+        font-size: 1.6rem;
+        color: #5c4033;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #fdfaf5;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        overflow-x: hidden;
+      } 

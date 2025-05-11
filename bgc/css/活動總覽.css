@@ -1,0 +1,66 @@
+.activity-report {
+    background-color: #f9f5f0;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.7;
+  }
+  
+  .activity-report h2 {
+    text-align: center;
+    color: #4A3F35;
+    margin-bottom: 20px;
+  }
+  
+  .activity-info p {
+    margin: 4px 0;
+  }
+  
+  .activity-report h3 {
+    color: #5d432c;
+    margin-top: 24px;
+  }
+  
+  .activity-report ul {
+    margin-left: 1.5rem;
+    padding-left: 0;
+  }
+  .activity-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+  
+  .activity-info {
+    flex: 2;
+  }
+  
+  .activity-photo {
+    flex: 1;
+  }
+  
+  .activity-photo img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  /* SDGs 詳細目標敘述 */
+.sdgs-details {
+  width: 70%;
+  margin: 0.5rem auto 2rem;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+}
+.sdgs-details p {
+  margin: 0.4rem 0;
+}
+.sdgs-details strong {
+  color: #4A3F35;
+}
+
