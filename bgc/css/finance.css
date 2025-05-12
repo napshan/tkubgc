@@ -54,3 +54,20 @@ body {
   margin: 1.5rem 0;
   color: #5b4636; /* 米色系深色文字 */
 }
+/* 報表連結右對齊、字體較小 */
+.report-links {
+  text-align: right;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.report-links a {
+  margin-left: 1rem;
+  color: #5b4636;       /* 可用米色系深色 */
+  text-decoration: underline;
+}
+
+.report-links a:first-child {
+  margin-left: 0;
+}
+
